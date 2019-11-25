@@ -10,3 +10,33 @@ public class Main {
 	}
 	
 }
+
+class Matrix {
+	
+	public Matrix(double[][] mat) {
+		this.mat = mat;
+		row = mat.length;
+		column = mat[0].length;
+	}
+	
+	double[][] mat;
+	public int row, column;
+
+	public Matrix add(Matrix b) {
+		for (int y = 0; y < mat.length; y++) {
+			for (int x = 0; x < mat[y].length; x++) {
+				mat[y][x] += b.mat[y][x];
+			}
+		}
+		return this;
+	}
+
+	public void matrixPrint() {
+		for (int y = 0; y < mat.length; y++) {
+			for (int x = 0; x < mat[y].length; x++) {
+				System.out.print(this.mat[y][x] + "  ");
+			}
+			System.out.println("");
+		}
+	}
+}
